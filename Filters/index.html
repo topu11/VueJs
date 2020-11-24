@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+  <div id="root">
+    <h1>{{UpperCaseName}} by computed properties</h1>
+    <hr>
+    <h1>{{name|upper}}</h1>
+    <h1>{{professon|upper}}</h1>
+    <hr>
+    <h1>{{name|lower}}</h1>
+    <h1>{{professon|lower}}</h1>
+    <h2>{{name|lower}}  <span style="color:aqua">Global</span></h2>
+    <h2>{{today|bdDateFormat}}  <span style="color:aqua">Global</span></h2>
+  </div>
+    
+
+
+
+
+
+
+    <script src="vue.js"></script>
+    <script>
+     Vue.filter("lower",function(s){
+         return s.toLowerCase();
+     })
+
+        var app=new Vue({
+            el:'#root',
+            data:
+            {
+                name:'A. B.M. Touhidul Islam',
+                professon:'Software Engineering',
+                today:new Date()
+            },
+            computed:
+            {
+                UpperCaseName()
+                {
+                    return this.name.toUpperCase();
+                }
+            },
+            filters:
+            {
+                upper(s)
+                {
+                    return s.toUpperCase(s);
+                },
+                lower(s)
+                {
+                    return s.toLowerCase(s);
+                },
+                bdDateFormat(date)
+                {
+                   var date1=date.getUTCDate();
+                   var month=date.getUTCMonth()+1;
+                   if(date1<10)
+                   {
+                       var date1=0+''+date1;
+                   }
+                   if(month<10)
+                   {
+                       var month=0+''+month;
+                   }
+                   var year=date.getUTCFullYear();
+                   return date1+"-"+month+"-"+year;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

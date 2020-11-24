@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Component 1</title>
+	<link rel="stylesheet" type="text/css" href="style.css">	
+</head>
+<body>
+
+<div id="root">
+	<div class="panel">
+		<div class="panelTitle">
+			This is Panel Title
+		</div>
+		<div class="panelContent">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, necessitatibus fugiat. Perspiciatis nulla quod minima?
+		</div>
+	</div>
+
+
+
+
+
+	<panel title="This is panel title">
+		This is panel content1 This is panel content This is panel content This is panel content
+	</panel>
+
+
+</div>
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	Vue.component("panel", {
+		template: `
+		<div class="panel">
+		<div class="panelTitle">
+			This is Panel Title
+		</div>
+		<div class="panelContent">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, necessitatibus fugiat. Perspiciatis nulla quod minima?
+		</div>
+	</div>
+		`
+	});
+
+
+	var app = new Vue({
+		el: "#root",
+		data: {
+		}
+	});
+	
+</script>
+
+</body>
+</html>

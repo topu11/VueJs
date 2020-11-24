@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewComponent2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+       
+   <panel title="This is panel Title">
+       <div> <span>first Name</span>
+        <input type="text" v-model="first_name" ></div>
+      <div style="margin-top:10px;">  <span>last Name</span>
+        <input type="text" v-model="last_name"></div>
+        <h3 v-bind:style="bgc">{{fullName}}</h3>
+   </panel>
+    </div>   
+    
+    
+    
+    
+    <script src="vue.js"></script>
+    <script src="component.js"></script>
+    <script>
+        var app=new Vue({
+         el:'#root',
+         data:
+         {
+           first_name:" ",
+           last_name:" ",
+           prefix:"you have already typed: ",
+           bgc: {
+			color: 'red'
+		}
+         },
+         computed:
+		{
+			fullName()
+			{
+                if(this.first_name!=" ")
+                {
+                    this.bgc={
+                        color: 'blue'  
+                    }
+                    return this.prefix+this.first_name+' '+this.last_name;
+                }
+                else
+                {
+                    var x="cursor is in intial position and No name is entereded";
+                    this.bgc={
+                        color: 'red'  
+                    }
+                    return x;
+                }
+				
+				
+            }
+		}
+        });
+    </script>
+</body>
+</html>

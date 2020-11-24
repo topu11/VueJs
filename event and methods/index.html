@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Methods</title>
+</head>
+<body>
+    <div id="root">
+<ul>
+    <li  v-for="(skill,i) in skills">
+        <p>{{i+1}} {{skill}}
+            <button v-on:click="removeSkill(i)">X</button></p>
+        </li>
+</ul>
+<input type="text" v-model="newSkill">
+<button v-on:click="addNewSkill()">Add</button>
+
+
+
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#root',
+            data:
+        {
+            newSkill:" ",
+            skills:['HTML','CSS','BootStrap','PHP','Python','ReactNative','ReactJS','VueJS'],
+          
+        },
+        methods: 
+            {
+                addNewSkill: function()
+                {
+                    this.skills.push(this.newSkill);
+                    this.newSkill=" ";
+                },
+                removeSkill(i)
+                {
+                    this.skills.splice(i,1);
+                }
+                
+            }
+        })
+    </script>
+</body>
+</html>

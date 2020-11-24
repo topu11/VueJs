@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Componenet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+      <tabs>
+          <tab name="Tab1" selected="true">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, atque!
+          </tab>
+          <tab name="Tab2">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, minima?
+          </tab>
+          <tab name="Tab3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, corporis!
+          </tab>
+      </tabs>
+    </div>
+    <script src="vue.js"></script>
+    <script src="component.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#root",
+            data:
+            {
+
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding of JSON</title>
+</head>
+<body>
+    <script>
+        let human=[
+          {
+              'name':'A.B.M. Touhidul Islam',
+              'id':'1104011',
+              'courses':[{
+               'course_id':'CSE-141',
+               'course_name':'Basic Computer',
+               'credit':'3.00',
+               'gpa':'3.00',
+               'Letter_Grade':'B'
+              },
+              {
+               'course_id':'EE-181',
+               'course_name':'Basic Electrial',
+               'credit':'3.00',
+               'gpa':'3.00',
+               'Letter_Grade':'B+'
+              }
+              ]
+          },
+          {
+              'name':'A.B.M.',
+              'id':'1104010',
+              'courses':[{
+               'course_id':'CSE-141',
+               'course_name':'Basic Computer',
+               'credit':'3.00',
+               'gpa':'3.00',
+               'Letter_Grade':'B+'
+              },
+              {
+               'course_id':'EE-181',
+               'course_name':'Basic Electrial',
+               'credit':'3.00',
+               'gpa':'3.00',
+               'Letter_Grade':'c+'
+              }]
+          },
+          {
+              'name':' Touhidul Islam',
+              'id':'1104012',
+              'courses':[{
+               'course_id':'CSE-141',
+               'course_name':'Basic Computer',
+               'credit':'3.00',
+               'gpa':'3.00',
+               'Letter_Grade':'A-'
+              },
+              {
+               'course_id':'EE-181',
+               'course_name':'Basic Electrial',
+               'credit':'3.00',
+               'gpa':'3.00',
+               'Letter_Grade':'A+'
+              }]
+          }
+        ];
+        console.log(human[1].name);
+        console.log(human[1].id);
+        console.log(human[1].courses[0].course_name);
+        console.log(human[0].courses);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>understanding of JS2</title>
+</head>
+<body>
+    <script>
+      console.log("start");
+      print("print");
+      console.log("end");
+      edit("edit",edit2);
+      function print(s)
+      {
+          setTimeout(function()
+          {
+              console.log("print");
+          },10);
+      }
+      setTimeout(function()
+      {
+          confirm("ok");
+      },10);
+      function edit(s,edit2)
+      {
+          setTimeout(function(){
+              console.log(s);
+              edit2();
+          },100
+          );
+      }
+      function edit2()
+      {
+          console.log("edit2");
+      }
+
+
+    </script>
+</body>
+</html>

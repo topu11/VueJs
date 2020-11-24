@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List rendering2</title>
+</head>
+<body>
+    <div id="root">
+     <ul v-for="(skill,i) in skills">
+     <li>{{i}} {{skill.name}}  {{skill.experience}}</li>
+     </ul>
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script>
+    var app=new Vue({
+        el:'#root',
+        data:
+        {
+            skills:[{name:"HTML",experience:"5 years"},{name:"CSS",experience:"5 years"},{name:"PHP", experience:"5 years"},{name:"Laravel",experience:"2 years"},{name:"Django",experience:"3 years"}]
+        }
+    })    
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed properties</title>
+</head>
+<body>
+    <h1>All Payments</h1><hr>
+    <div id="root">
+        <ul>
+            <li v-for="(payment,i) in payments">
+                <p style="display: inline-block;">{{i+1}}  {{payment.name}} {{payment.amount}}</p>
+                <p v-if="payment.paid==true" style="display: inline-block;color: green;">paid</p>
+                <p v-if="payment.paid==false" style="display: inline-block;color:red">Unpaid</p>
+                <br>
+            </li>
+        </ul>
+        <h1>UnPaidPayments</h1><hr>
+        <ul>
+            <li v-for="(payment,i) in unpaidPayments">
+                <p style="display: inline-block;">{{i+1}}  {{payment.name}} {{payment.amount}}</p>
+                <br>
+            </li>
+        </ul>
+        <h1>Paid Amount is {{total}}</h1>
+        <h1>Unpaid Amount is {{totalUnpaid}}</h1>
+    </div>
+
+
+
+
+
+    <script src="vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#root',
+            data:
+            {
+                payments:[
+                    {name:"houseRent",amount:15000,paid:true},
+                    {name:"elctricityBill",amount:1000,paid:false},
+                    {name:"gasBill",amount:800,paid:true},
+                    {name:"waterBill",amount:500,paid:false},
+                    {name:"interNetBill",amount:400,paid:false},
+                ]
+            },
+            computed:
+            {
+                unpaidPayments()
+                {
+                    return this.payments.filter(function(p){
+                        return p.paid;
+                    });
+                },
+               total : function()
+               {
+                   var sum=0;
+                   for ( var i=0 ; i<this.payments.length;i++)
+                   {
+                       if(this.payments[i].paid==true){
+                        sum+=this.payments[i].amount;
+                       }
+                       
+                   }
+                   return sum;
+               },
+               totalUnpaid()
+               {
+                   var sum=0;
+                   for ( var i=0 ; i<this.payments.length;i++)
+                   {
+                       if(this.payments[i].paid==false){
+                        sum+=this.payments[i].amount;
+                       }
+                       
+                   }
+                   return sum;
+               }
+            }
+            
+
+             
+        })
+    </script>
+</body>
+</html>
